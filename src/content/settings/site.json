@@ -1,7 +1,7 @@
 {
-  "email": "[E-MAIL]",
-  "phone": "[TELEFOON]",
-  "heroPhoto": "/images/site/hero-bar.jpg",
+  "email": "info@cocktailcrew.nl",
+  "phone": "+31645438943",
+  "heroPhoto": "/images/site/heroPhoto.jpg",
   "heroStyles": [
     "noir",
     "citrus",

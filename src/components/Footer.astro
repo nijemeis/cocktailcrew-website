@@ -1,0 +1,23 @@
+---
+import { glassFull } from './Icons';
+
+interface Props {
+  nix: string;
+  creditsLabel: string;
+  credits: string;
+  email: string;
+  phone: string;
+}
+const { nix, creditsLabel, credits, email, phone } = Astro.props;
+const isPlaceholder = (v: string) => !v || v.startsWith('[');
+---
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="footer-brand"><span class="logo-tile" set:html={glassFull(28)} />CocktailCrew</span>
+    <a href="https://cocktailcrew.nl">cocktailcrew.nl</a>
+    {isPlaceholder(email) ? <span>{email}</span> : <a href={`mailto:${email}`}>{email}</a>}
+    {isPlaceholder(phone) ? <span>{phone}</span> : <a href={`tel:${phone.replace(/[^+\d]/g, '')}`}>{phone}</a>}
+    <span class="footer-nix"><b>NIX18</b>{nix}</span>
+    {credits && <span class="credits">{creditsLabel} {credits}.</span>}
+  </div>
+</footer>

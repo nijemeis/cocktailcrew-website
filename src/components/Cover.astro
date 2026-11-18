@@ -1,0 +1,26 @@
+---
+import { LOOKS } from '../lib/looks';
+
+interface Props {
+  look: string;
+  bar: string;
+  tag: string;
+  photo?: string | null;
+}
+const { look, bar, tag, photo } = Astro.props;
+const c = LOOKS[look] ?? LOOKS.basic;
+const text = `font-family:${c.bodyFont}; text-align:${c.align};`;
+---
+<div class="cover" style={`padding:${c.pad}; background:${c.bg}; color:${c.ink};`}>
+  {c.d1 && <div class="cover-layer" style={c.d1}></div>}
+  {c.d2 && <div class="cover-layer" style={c.d2}></div>}
+  {c.d3 && <div class="cover-layer" style={c.d3}></div>}
+  {photo && <img class="cover-layer cover-photo" src={photo} alt="" loading="lazy" decoding="async" style={c.ph} />}
+  <div class="cover-bar" style={text}>{bar}</div>
+  <div class="cover-spacer"></div>
+  <div
+    class="cover-title"
+    style={`font-family:${c.titleFont}; font-size:${c.tSize}px; font-weight:${c.tWeight}; font-style:${c.tStyle}; text-transform:${c.tCase}; letter-spacing:${c.tTrack}; text-align:${c.align}; color:${c.tColor};`}
+  >{c.title}</div>
+  <div class="cover-tag" style={`${text} color:${c.sub};`}>{tag}</div>
+</div>

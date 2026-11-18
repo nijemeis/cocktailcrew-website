@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { loadPage, paths, type Lang } from '../lib/content';
+import { cherry } from './Icons';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const { home: h, settings } = await loadPage(lang);
+const p = paths[lang];
+---
+<Base lang={lang} title={`${h.thanks.title} – CocktailCrew`} description={h.seo.description}>
+  <Header lang={lang} nav={h.nav} home={p.home} minimal />
+  <main class="wrap thanks">
+    <span class="eyebrow"><Fragment set:html={cherry()} />CocktailCrew</span>
+    <h1>{h.thanks.title}</h1>
+    <p>{h.thanks.body}</p>
+    <a class="btn btn-primary" href={p.home}>{h.thanks.back}</a>
+  </main>
+  <Footer nix={h.footer.nix} creditsLabel={h.footer.credits} credits={settings.photoCredits} email={settings.email} phone={settings.phone} />
+</Base>

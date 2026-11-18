@@ -1,0 +1,10 @@
+{
+  "name": "Noir & Goud",
+  "nameEn": "Noir & Gold",
+  "order": 1,
+  "look": "noir",
+  "group": "lux",
+  "descNl": "Diep zwart met goud, dubbele lijst en een boogfoto. Voor de cocktailbar die indruk wil maken.",
+  "descEn": "Deep black and gold, a double frame and an arched photo. For bars that want to impress.",
+  "photo": "/images/styles/noir.jpg"
+}

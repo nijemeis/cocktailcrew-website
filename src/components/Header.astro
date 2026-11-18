@@ -1,0 +1,36 @@
+---
+import { glassFull } from './Icons';
+import type { Lang } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+  nav: { how: string; styles: string; formats: string; paper: string; faq: string; cta: string };
+  home: string;
+  /** Hide the section links (e.g. on the thank-you page). */
+  minimal?: boolean;
+}
+const { lang, nav, home, minimal = false } = Astro.props;
+const a = (id: string) => (minimal ? `${home}#${id}` : `#${id}`);
+---
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href={home}>
+      <span class="logo-tile" set:html={glassFull(34)} />
+      <span class="brand-text"><span class="brand-name">CocktailCrew</span><span class="brand-sub">Menu Creator</span></span>
+    </a>
+    <nav class="main-nav" aria-label={lang === 'nl' ? 'Hoofdmenu' : 'Main menu'}>
+      <a href={a('hoe')}>{nav.how}</a>
+      <a href={a('stijlen')}>{nav.styles}</a>
+      <a href={a('formaten')}>{nav.formats}</a>
+      <a href={a('papier')}>{nav.paper}</a>
+      <a href={a('vragen')}>{nav.faq}</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label={lang === 'nl' ? 'Taal' : 'Language'}>
+        <a href="/" hreflang="nl" lang="nl" aria-current={lang === 'nl' ? 'true' : undefined}>NL</a>
+        <a href="/en/" hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+      </div>
+      <a class="btn btn-primary btn-sm" href={a('aanvragen')}>{nav.cta}</a>
+    </div>
+  </div>
+</header>

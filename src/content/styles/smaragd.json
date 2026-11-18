@@ -1,0 +1,10 @@
+{
+  "name": "Smaragd",
+  "nameEn": "Emerald",
+  "order": 3,
+  "look": "emerald",
+  "group": "lux",
+  "descNl": "Flessengroen met messing, Romeinse cijfers en ronde medaillonfoto’s.",
+  "descEn": "Bottle green and brass, roman numerals and round medallion photos.",
+  "photo": "/images/styles/smaragd.jpg"
+}

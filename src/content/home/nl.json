@@ -1,0 +1,278 @@
+{
+  "seo": {
+    "title": "CocktailCrew – cocktailkaarten voor bars, cafés & hotels",
+    "description": "CocktailCrew ontwerpt, vult en drukt je cocktailmenu. Tien stijlen, drie formaten, waterbestendig papier. Jij keurt de proef, wij regelen de rest."
+  },
+  "nav": {
+    "how": "Hoe het werkt",
+    "styles": "Stijlen",
+    "formats": "Formaten",
+    "paper": "Papier",
+    "faq": "Vragen",
+    "cta": "Kaart aanvragen"
+  },
+  "hero": {
+    "eyebrow": "Cocktailkaarten voor bars, cafés & hotels",
+    "title": "Een cocktailkaart die net zo goed is als je drankjes.",
+    "sub": "CocktailCrew ontwerpt, vult en drukt je cocktailmenu. Jouw drankjes, jouw prijzen, in een stijl die bij je zaak past. Jij keurt de proef, wij regelen de rest.",
+    "cta1": "Vraag je kaart aan",
+    "cta2": "Bekijk de stijlen",
+    "checks": [
+      "10 stijlen, 3 formaten",
+      "Nederlands, Engels of beide",
+      "Allergenen automatisch"
+    ]
+  },
+  "strip": [
+    {
+      "k": "Waterbestendig",
+      "v": "Synthetisch papier, 250 µm"
+    },
+    {
+      "k": "Drukklaar",
+      "v": "PDF/X-4 · CMYK (FOGRA51)"
+    },
+    {
+      "k": "Strak afgewerkt",
+      "v": "3 mm afloop, snij- en vouwtekens"
+    },
+    {
+      "k": "Altijd compleet",
+      "v": "Allergenen, 0.0 en NIX18"
+    }
+  ],
+  "how": {
+    "eyebrow": "Hoe het werkt",
+    "title": "Van lege tafel naar nieuwe kaart in vier stappen.",
+    "steps": [
+      {
+        "tag": "Concept",
+        "title": "Kies formaat en stijl",
+        "body": "A4, lang gevouwen of wikkelvouw. Kies uit tien stijlen, van Noir & Goud tot Basic, met of zonder drankfoto’s."
+      },
+      {
+        "tag": "Concept",
+        "title": "Wij zetten je drankjes erop",
+        "body": "We bouwen je kaart op uit recepten die passen bij jouw assortiment. Jij bepaalt de volgorde, secties en prijzen."
+      },
+      {
+        "tag": "Proef bij klant",
+        "title": "Jij keurt de proef",
+        "body": "Je krijgt een PDF-proef. Iets aanpassen? Dan maken we een nieuwe versie tot alles klopt."
+      },
+      {
+        "tag": "Geleverd",
+        "title": "Gedrukt en bezorgd",
+        "body": "Na jouw akkoord gaat de kaart naar de drukker, op papier dat tegen een natte bar kan."
+      }
+    ]
+  },
+  "styles": {
+    "eyebrow": "Stijlen",
+    "title": "Tien stijlen. Eén past bij jouw zaak.",
+    "sub": "Elke stijl werkt in elk formaat, in elke taal, met of zonder foto’s.",
+    "coverTag": "Signatures & klassiekers",
+    "groupAll": "Alle",
+    "groupLux": "Luxe",
+    "groupSummer": "Zomers & fris",
+    "groupPlayful": "Speels",
+    "groupBasic": "Basic"
+  },
+  "features": {
+    "eyebrow": "Alles klopt",
+    "title": "Wat er op je kaart staat, klopt ook.",
+    "items": [
+      {
+        "title": "Allergenen en 0.0 automatisch",
+        "body": "We berekenen allergenen uit de ingrediënten en markeren alcoholvrije drankjes. De legenda staat er vanzelf bij."
+      },
+      {
+        "title": "Korte, heldere beschrijvingen",
+        "body": "Maximaal 90 tekens per drankje, zodat elke kaart rustig en leesbaar blijft."
+      },
+      {
+        "title": "Prijzen zoals jij ze wilt",
+        "body": "Elke prijs stel je zelf in. Prijswijziging? Je krijgt een nieuwe versie en eerst een proef."
+      },
+      {
+        "title": "Past altijd",
+        "body": "Drankjes worden slim over de panelen verdeeld. Geen overvolle kaart, geen gaten."
+      }
+    ],
+    "extras": [
+      "Nederlands, Engels of beide",
+      "Met of zonder drankfoto’s",
+      "Eigen foto of uit onze beeldbank",
+      "NIX18-regel op elke kaart"
+    ]
+  },
+  "panel": {
+    "section": "Klassiekers",
+    "legend": "ei · Allergie? Vraag onze bartenders.",
+    "nix": "Geen 18, geen alcohol.",
+    "drinks": [
+      {
+        "name": "Whiskey Sour",
+        "price": "11,50",
+        "desc": "Fris-zuur en zijdezacht, met een kraag van schuim.",
+        "ingr": "Bourbon · citroen · eiwit",
+        "allergen": "E",
+        "zero": false,
+        "photo": "/images/drinks/whiskey-sour.jpg"
+      },
+      {
+        "name": "Paloma",
+        "price": "11,50",
+        "desc": "Bittere grapefruit, een snuf zout, lekker lang.",
+        "ingr": "Tequila · grapefruit · limoen · soda",
+        "allergen": "",
+        "zero": false,
+        "photo": "/images/drinks/paloma.jpg"
+      },
+      {
+        "name": "Gin & Tonic",
+        "price": "10,50",
+        "desc": "Kraakhelder, met komkommer en veel ijs.",
+        "ingr": "Gin · tonic · komkommer",
+        "allergen": "",
+        "zero": false,
+        "photo": "/images/drinks/gin-tonic.jpg"
+      },
+      {
+        "name": "Virgin Mojito",
+        "price": "7,50",
+        "desc": "Alle frisheid van munt en limoen, zonder alcohol.",
+        "ingr": "Limoen · munt · rietsuiker · soda",
+        "allergen": "",
+        "zero": true,
+        "photo": "/images/drinks/virgin-mojito.jpg"
+      }
+    ]
+  },
+  "formats": {
+    "eyebrow": "Formaten",
+    "title": "Drie formaten, gemaakt voor op tafel.",
+    "sub": "Van een stevige A4 tot een wikkelvouw met zes panelen. Alles in echte millimeters, met afloop en vouwtekens.",
+    "folded": "Gevouwen",
+    "flat": "Plano",
+    "good": "Ideaal voor",
+    "items": [
+      {
+        "kind": "a4",
+        "name": "A4 dubbelzijdig",
+        "panels": "2 zijden",
+        "body": "Eén stevig vel, voor- en achterkant in twee kolommen.",
+        "trim": "210 × 297 mm",
+        "flatSize": "210 × 297 mm",
+        "good": "Compacte kaart"
+      },
+      {
+        "kind": "bifold",
+        "name": "Lang gevouwen",
+        "panels": "4 panelen",
+        "body": "Eén vouw: een smalle cover en een ruime binnenkant.",
+        "trim": "105 × 297 mm",
+        "flatSize": "210 × 297 mm",
+        "good": "De meeste bars"
+      },
+      {
+        "kind": "trifold",
+        "name": "Wikkelvouw",
+        "panels": "6 panelen",
+        "body": "Twee vouwen, met een intropaneel en ruimte voor veel drankjes.",
+        "trim": "105 × 297 mm",
+        "flatSize": "313 × 297 mm",
+        "good": "Grote kaart"
+      }
+    ]
+  },
+  "paper": {
+    "eyebrow": "Papier & afwerking",
+    "title": "Gedrukt om mee te gaan.",
+    "recommended": "Aanbevolen voor tafels",
+    "papers": [
+      {
+        "name": "Synthetisch 250 µm",
+        "body": "Waterbestendig en afneembaar. Kan tegen gemorste drankjes en een natte doek.",
+        "rec": true
+      },
+      {
+        "name": "Silk mc 350 g",
+        "body": "Stevig, zijdeglanzend papier met een luxe uitstraling.",
+        "rec": false
+      },
+      {
+        "name": "Gerecycled 300 g FSC",
+        "body": "Gerecycled en FSC-gecertificeerd, met een natuurlijke look.",
+        "rec": false
+      }
+    ],
+    "finishLabel": "Afwerking",
+    "finishes": [
+      "Mat laminaat",
+      "Soft-touch",
+      "Geen"
+    ],
+    "qtyLabel": "Oplage",
+    "qtys": [
+      "50",
+      "100",
+      "250",
+      "500"
+    ],
+    "specLabel": "Drukspecificatie",
+    "spec": "PDF/X-4 · CMYK (FOGRA51) · 3 mm afloop · snij- en vouwtekens · lettertypen ingesloten"
+  },
+  "faq": {
+    "eyebrow": "Vragen",
+    "title": "Goed om te weten",
+    "items": [
+      {
+        "q": "Wat kost een nieuwe kaart?",
+        "a": "Dat hangt af van formaat, papier en oplage. [PRIJS VANAF] Vraag een offerte aan en je krijgt een prijs op maat."
+      },
+      {
+        "q": "Kan ik later drankjes of prijzen aanpassen?",
+        "a": "Ja. Elke wijziging wordt een nieuwe versie van je kaart. Je krijgt altijd eerst een proef voordat we opnieuw drukken."
+      },
+      {
+        "q": "Moet ik zelf foto’s aanleveren?",
+        "a": "Nee. Kies uit onze beeldbank, lever eigen foto’s aan (minimaal 1500 pixels aan de korte zijde) of kies een kaart zonder drankfoto’s."
+      },
+      {
+        "q": "In welke talen kan de kaart?",
+        "a": "Nederlands, Engels, of beide op één kaart. Bij tweetalig staan de beschrijvingen netjes onder elkaar."
+      },
+      {
+        "q": "Hoe lang duurt het?",
+        "a": "[LEVERTIJD] Na jouw akkoord op de proef gaat de kaart direct naar de drukker."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Klaar voor een kaart die verkoopt?",
+    "sub": "Laat je gegevens achter. We nemen contact op om je drankjes, stijl en formaat door te nemen.",
+    "bar": "Naam van je zaak",
+    "city": "Plaats",
+    "email": "E-mailadres",
+    "format": "Formaat",
+    "formatOptions": [
+      "Weet ik nog niet",
+      "A4 dubbelzijdig",
+      "Lang gevouwen",
+      "Wikkelvouw"
+    ],
+    "message": "Opmerking (optioneel)",
+    "submit": "Kaart aanvragen",
+    "note": "We gebruiken je gegevens alleen om contact met je op te nemen."
+  },
+  "thanks": {
+    "title": "Bedankt!",
+    "body": "We hebben je aanvraag ontvangen en nemen snel contact met je op.",
+    "back": "Terug naar de homepage"
+  },
+  "footer": {
+    "nix": "Geen 18, geen alcohol.",
+    "credits": "Voorbeeldfoto’s via Unsplash:"
+  }
+}

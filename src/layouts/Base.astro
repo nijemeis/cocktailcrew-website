@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import { FONTS_URL } from '../lib/looks';
+
+interface Props {
+  lang: 'nl' | 'en';
+  title: string;
+  description: string;
+  alternate?: { nl: string; en: string };
+}
+const { lang, title, description, alternate } = Astro.props;
+const site = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const favicon = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#2e2b25"/><path d="M12.3 19.2h15.4l-1.1 11.4c-.1 1-.9 1.6-1.9 1.6H15.3c-1 0-1.8-.6-1.9-1.6z" fill="#d67f48"/><path d="M10.8 11.5h18.4l-1.7 19.6c-.15 1.7-1.5 2.9-3.2 2.9h-8.6c-1.7 0-3.05-1.2-3.2-2.9z" fill="none" stroke="#f5ead8" stroke-width="1.9"/><circle cx="26.2" cy="11.2" r="3.1" fill="#b2622d"/></svg>')}`;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href={favicon} />
+    {alternate && <link rel="alternate" hreflang="nl" href={site + alternate.nl} />}
+    {alternate && <link rel="alternate" hreflang="en" href={site + alternate.en} />}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={FONTS_URL} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

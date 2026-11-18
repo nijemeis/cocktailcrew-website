@@ -1,0 +1,10 @@
+{
+  "name": "Basic",
+  "nameEn": "Basic",
+  "order": 10,
+  "look": "basic",
+  "group": "basic",
+  "descNl": "Zwart op wit, één letter, strakke koppen. Laat de drankjes spreken.",
+  "descEn": "Black on white, one typeface, clean heads. Lets the drinks do the talking.",
+  "photo": "/images/styles/basic.jpg"
+}

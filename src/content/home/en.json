@@ -1,0 +1,278 @@
+{
+  "seo": {
+    "title": "CocktailCrew – cocktail menus for bars, cafés & hotels",
+    "description": "CocktailCrew designs, fills and prints your cocktail menu. Ten styles, three formats, waterproof paper. You approve the proof, we handle the rest."
+  },
+  "nav": {
+    "how": "How it works",
+    "styles": "Styles",
+    "formats": "Formats",
+    "paper": "Paper",
+    "faq": "FAQ",
+    "cta": "Request a menu"
+  },
+  "hero": {
+    "eyebrow": "Cocktail menus for bars, cafés & hotels",
+    "title": "A cocktail menu as good as your drinks.",
+    "sub": "CocktailCrew designs, fills and prints your cocktail menu. Your drinks, your prices, in a style that suits your venue. You approve the proof, we handle the rest.",
+    "cta1": "Request your menu",
+    "cta2": "See the styles",
+    "checks": [
+      "10 styles, 3 formats",
+      "Dutch, English or both",
+      "Allergens done for you"
+    ]
+  },
+  "strip": [
+    {
+      "k": "Waterproof",
+      "v": "Synthetic paper, 250 µm"
+    },
+    {
+      "k": "Print-ready",
+      "v": "PDF/X-4 · CMYK (FOGRA51)"
+    },
+    {
+      "k": "Clean finish",
+      "v": "3 mm bleed, crop and fold marks"
+    },
+    {
+      "k": "Always complete",
+      "v": "Allergens, 0.0 and NIX18"
+    }
+  ],
+  "how": {
+    "eyebrow": "How it works",
+    "title": "From empty table to new menu in four steps.",
+    "steps": [
+      {
+        "tag": "Draft",
+        "title": "Pick a format and style",
+        "body": "A4, long fold or roll fold. Choose from ten styles, from Noir & Gold to Basic, with or without drink photos."
+      },
+      {
+        "tag": "Draft",
+        "title": "We add your drinks",
+        "body": "We build your menu from recipes that match what you stock. You decide the order, sections and prices."
+      },
+      {
+        "tag": "Proof",
+        "title": "You approve the proof",
+        "body": "You get a PDF proof. Want a change? We make a new version until everything is right."
+      },
+      {
+        "tag": "Delivered",
+        "title": "Printed and delivered",
+        "body": "Once you approve, the menu goes to the printer, on paper that can handle a wet bar."
+      }
+    ]
+  },
+  "styles": {
+    "eyebrow": "Styles",
+    "title": "Ten styles. One fits your venue.",
+    "sub": "Every style works in every format, in every language, with or without photos.",
+    "coverTag": "Signatures & classics",
+    "groupAll": "All",
+    "groupLux": "Luxury",
+    "groupSummer": "Summery & fresh",
+    "groupPlayful": "Playful",
+    "groupBasic": "Basic"
+  },
+  "features": {
+    "eyebrow": "Everything adds up",
+    "title": "What’s on your menu is right.",
+    "items": [
+      {
+        "title": "Allergens and 0.0, automatically",
+        "body": "We work out allergens from the ingredients and mark alcohol-free drinks. The legend is added for you."
+      },
+      {
+        "title": "Short, clear descriptions",
+        "body": "At most 90 characters per drink, so every menu stays calm and readable."
+      },
+      {
+        "title": "Prices the way you want",
+        "body": "You set every price. Prices changed? You get a new version, and a proof first."
+      },
+      {
+        "title": "Always fits",
+        "body": "Drinks are spread across the panels smartly. No crammed menu, no gaps."
+      }
+    ],
+    "extras": [
+      "Dutch, English or both",
+      "With or without drink photos",
+      "Your own photo or our image bank",
+      "NIX18 line on every menu"
+    ]
+  },
+  "panel": {
+    "section": "Classics",
+    "legend": "egg · Allergies? Ask our bartenders.",
+    "nix": "Under 18? No alcohol.",
+    "drinks": [
+      {
+        "name": "Whiskey Sour",
+        "price": "11.50",
+        "desc": "Tart and silky, topped with a soft foam collar.",
+        "ingr": "Bourbon · lemon · egg white",
+        "allergen": "E",
+        "zero": false,
+        "photo": "/images/drinks/whiskey-sour.jpg"
+      },
+      {
+        "name": "Paloma",
+        "price": "11.50",
+        "desc": "Bitter grapefruit, a pinch of salt, long and bright.",
+        "ingr": "Tequila · grapefruit · lime · soda",
+        "allergen": "",
+        "zero": false,
+        "photo": "/images/drinks/paloma.jpg"
+      },
+      {
+        "name": "Gin & Tonic",
+        "price": "10.50",
+        "desc": "Crisp and clear, with cucumber and plenty of ice.",
+        "ingr": "Gin · tonic · cucumber",
+        "allergen": "",
+        "zero": false,
+        "photo": "/images/drinks/gin-tonic.jpg"
+      },
+      {
+        "name": "Virgin Mojito",
+        "price": "7.50",
+        "desc": "All the freshness of mint and lime, no alcohol.",
+        "ingr": "Lime · mint · cane sugar · soda",
+        "allergen": "",
+        "zero": true,
+        "photo": "/images/drinks/virgin-mojito.jpg"
+      }
+    ]
+  },
+  "formats": {
+    "eyebrow": "Formats",
+    "title": "Three formats, made for the table.",
+    "sub": "From a sturdy A4 to a six-panel roll fold. All in real millimetres, with bleed and fold marks.",
+    "folded": "Folded",
+    "flat": "Flat",
+    "good": "Best for",
+    "items": [
+      {
+        "kind": "a4",
+        "name": "A4 double-sided",
+        "panels": "2 sides",
+        "body": "One sturdy sheet, front and back in two columns.",
+        "trim": "210 × 297 mm",
+        "flatSize": "210 × 297 mm",
+        "good": "Compact menus"
+      },
+      {
+        "kind": "bifold",
+        "name": "Long fold",
+        "panels": "4 panels",
+        "body": "One fold: a slim cover and a roomy inside.",
+        "trim": "105 × 297 mm",
+        "flatSize": "210 × 297 mm",
+        "good": "Most bars"
+      },
+      {
+        "kind": "trifold",
+        "name": "Roll fold",
+        "panels": "6 panels",
+        "body": "Two folds, with an intro panel and room for lots of drinks.",
+        "trim": "105 × 297 mm",
+        "flatSize": "313 × 297 mm",
+        "good": "Big menus"
+      }
+    ]
+  },
+  "paper": {
+    "eyebrow": "Paper & finish",
+    "title": "Printed to last.",
+    "recommended": "Recommended for tables",
+    "papers": [
+      {
+        "name": "Synthetic 250 µm",
+        "body": "Waterproof and wipeable. Handles spilled drinks and a wet cloth.",
+        "rec": true
+      },
+      {
+        "name": "Silk 350 gsm",
+        "body": "Sturdy, satin-finish paper with a premium feel.",
+        "rec": false
+      },
+      {
+        "name": "Recycled 300 gsm FSC",
+        "body": "Recycled and FSC-certified, with a natural look.",
+        "rec": false
+      }
+    ],
+    "finishLabel": "Finish",
+    "finishes": [
+      "Matt laminate",
+      "Soft-touch",
+      "None"
+    ],
+    "qtyLabel": "Quantity",
+    "qtys": [
+      "50",
+      "100",
+      "250",
+      "500"
+    ],
+    "specLabel": "Print spec",
+    "spec": "PDF/X-4 · CMYK (FOGRA51) · 3 mm bleed · crop and fold marks · fonts embedded"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Good to know",
+    "items": [
+      {
+        "q": "What does a new menu cost?",
+        "a": "It depends on format, paper and quantity. [PRICE FROM] Request a quote and we’ll send a tailored price."
+      },
+      {
+        "q": "Can I change drinks or prices later?",
+        "a": "Yes. Every change becomes a new version of your menu, and you always get a proof before we print again."
+      },
+      {
+        "q": "Do I need to supply photos?",
+        "a": "No. Choose from our image bank, send your own photos (at least 1500 pixels on the short side) or go for a menu without drink photos."
+      },
+      {
+        "q": "Which languages are available?",
+        "a": "Dutch, English, or both on one menu. Bilingual menus show both descriptions neatly stacked."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "[LEAD TIME] Once you approve the proof, the menu goes straight to the printer."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready for a menu that sells?",
+    "sub": "Leave your details. We’ll get in touch to go through your drinks, style and format.",
+    "bar": "Venue name",
+    "city": "City",
+    "email": "Email address",
+    "format": "Format",
+    "formatOptions": [
+      "Not sure yet",
+      "A4 double-sided",
+      "Long fold",
+      "Roll fold"
+    ],
+    "message": "Message (optional)",
+    "submit": "Request a menu",
+    "note": "We only use your details to get in touch with you."
+  },
+  "thanks": {
+    "title": "Thank you!",
+    "body": "We’ve received your request and will be in touch soon.",
+    "back": "Back to the homepage"
+  },
+  "footer": {
+    "nix": "Under 18? No alcohol.",
+    "credits": "Sample photos via Unsplash:"
+  }
+}

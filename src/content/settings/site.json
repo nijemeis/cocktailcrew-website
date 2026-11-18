@@ -1,0 +1,17 @@
+{
+  "email": "[E-MAIL]",
+  "phone": "[TELEFOON]",
+  "heroPhoto": "/images/site/hero-bar.jpg",
+  "heroStyles": [
+    "noir",
+    "citrus",
+    "tropicana"
+  ],
+  "heroBars": [
+    "Café De Kade",
+    "Paviljoen Zuid",
+    "Bar Flamingo"
+  ],
+  "sampleBar": "Café De Kade",
+  "photoCredits": "Andy Kennedy, Pylyp Sukhenko, Allan Francis, Artem Pochepetsky, Olivier Chatel, Nadya Filatova, Daniel Álvasd, M.S. Meeuwesen, Christine Trant, Markus Spiske, Abhishek Hajare, Leighann Blackwood"
+}

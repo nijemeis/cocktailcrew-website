@@ -1,0 +1,85 @@
+/**
+ * Visual "looks" for the sample menu covers. Each menu style in the CMS picks one of these.
+ * Coordinates are for a 210×594 px cover (a 105×297 mm long-fold cover at 2 px/mm).
+ * d1–d3 are decorative layers; ph is the photo frame.
+ */
+export type Look = {
+  bg: string; ink: string; tColor: string; sub: string; pad: string; align: 'left' | 'center';
+  titleFont: string; tSize: number; tWeight: number; tStyle: string; tCase: string; tTrack: string;
+  bodyFont: string; title: string; d1: string; d2: string; d3: string; ph: string; swatches: string[];
+};
+
+export const LOOKS: Record<string, Look> = {
+  noir: { bg: '#15130f', ink: '#efe6d2', tColor: '#c8a15a', sub: '#cbbf9f', pad: '36px 24px 40px', align: 'center',
+    titleFont: "'Bodoni Moda', serif", tSize: 34, tWeight: 500, tStyle: 'italic', tCase: 'none', tTrack: '-0.01em', bodyFont: "'Jost', sans-serif", title: 'Cocktails',
+    d1: 'left:14px; top:14px; right:14px; bottom:14px; border:1px solid #c8a15a;',
+    d2: 'left:19px; top:19px; right:19px; bottom:19px; border:1px solid rgba(200,161,90,.5);',
+    d3: '',
+    ph: 'left:45px; top:88px; width:120px; height:180px; border-radius:60px 60px 0 0; border:1px solid #c8a15a; box-sizing:border-box;',
+    swatches: ['#15130f', '#c8a15a', '#efe6d2'] },
+  ivory: { bg: '#f3ede2', ink: '#1d1b18', tColor: '#1d1b18', sub: '#6e2a2a', pad: '34px 22px 40px', align: 'center',
+    titleFont: "'Cormorant Garamond', serif", tSize: 38, tWeight: 600, tStyle: 'normal', tCase: 'none', tTrack: '0', bodyFont: "'EB Garamond', serif", title: 'Cocktails',
+    d1: 'left:20px; right:20px; top:62px; height:1px; background:#1d1b18;',
+    d2: 'left:20px; right:20px; bottom:132px; height:1px; background:#1d1b18;',
+    d3: '',
+    ph: 'left:42px; top:98px; width:126px; height:160px; outline:1px solid #6e2a2a; outline-offset:5px;',
+    swatches: ['#f3ede2', '#1d1b18', '#6e2a2a'] },
+  emerald: { bg: '#12291f', ink: '#ece3cf', tColor: '#c4a36a', sub: '#d8cdb4', pad: '36px 24px 42px', align: 'center',
+    titleFont: "'Cinzel', serif", tSize: 21, tWeight: 600, tStyle: 'normal', tCase: 'uppercase', tTrack: '0.04em', bodyFont: "'Jost', sans-serif", title: 'Cocktails',
+    d1: 'left:14px; top:14px; right:14px; bottom:14px; border:1px solid #c4a36a; border-radius:4px;',
+    d2: '',
+    d3: 'left:101px; top:232px; width:8px; height:8px; border-radius:50%; background:#c4a36a;',
+    ph: 'left:48px; top:96px; width:114px; height:114px; border-radius:50%; border:2px solid #c4a36a; box-sizing:border-box;',
+    swatches: ['#12291f', '#c4a36a', '#ece3cf'] },
+  citrus: { bg: '#ffd23f', ink: '#1f2a10', tColor: '#1f2a10', sub: '#3d3a12', pad: '30px 20px 38px', align: 'left',
+    titleFont: "'Bricolage Grotesque', sans-serif", tSize: 33, tWeight: 800, tStyle: 'normal', tCase: 'none', tTrack: '-0.04em', bodyFont: "'DM Sans', sans-serif", title: 'Cocktails',
+    d1: 'left:-40px; top:60px; width:290px; height:290px; border-radius:50%; background:#ff8a1f;',
+    d2: '', d3: '',
+    ph: 'left:30px; top:130px; width:150px; height:150px; border-radius:50%; border:6px solid #ffd23f; box-sizing:border-box;',
+    swatches: ['#ffd23f', '#ff8a1f', '#2f7d3a'] },
+  riviera: { bg: '#f6f1e7', ink: '#1c3f7a', tColor: '#1c3f7a', sub: '#b8321f', pad: '88px 22px 40px', align: 'center',
+    titleFont: "'DM Serif Display', serif", tSize: 35, tWeight: 400, tStyle: 'normal', tCase: 'none', tTrack: '-0.01em', bodyFont: "'Karla', sans-serif", title: 'Cocktails',
+    d1: 'left:0; top:0; right:0; height:66px; background:repeating-linear-gradient(90deg,#1f4f9c 0 21px,#f6f1e7 21px 42px);',
+    d2: '',
+    d3: 'left:22px; right:22px; bottom:132px; height:2px; background:#1f4f9c;',
+    ph: 'left:45px; top:110px; width:120px; height:170px; border-radius:60px 60px 0 0;',
+    swatches: ['#f6f1e7', '#1f4f9c', '#b8321f'] },
+  mint: { bg: '#0f6e57', ink: '#e9f6ef', tColor: '#ffffff', sub: '#cdeedd', pad: '32px 20px 40px', align: 'center',
+    titleFont: "'Young Serif', serif", tSize: 30, tWeight: 400, tStyle: 'normal', tCase: 'none', tTrack: '-0.01em', bodyFont: "'Manrope', sans-serif", title: 'Cocktails',
+    d1: '',
+    d2: 'left:124px; top:68px; width:62px; height:62px; border-radius:50%; background:#ffd84d;',
+    d3: 'left:28px; top:250px; width:40px; height:40px; border-radius:50%; background:#e9f6ef;',
+    ph: 'left:40px; top:90px; width:130px; height:210px; border-radius:65px; border:5px solid #ff8e7a; box-sizing:border-box;',
+    swatches: ['#0f6e57', '#ff8e7a', '#ffd84d'] },
+  tropicana: { bg: '#ff5c8a', ink: '#2a0614', tColor: '#2a0614', sub: '#3d0b20', pad: '32px 20px 40px', align: 'left',
+    titleFont: "'Shrikhand', serif", tSize: 27, tWeight: 400, tStyle: 'normal', tCase: 'none', tTrack: '0', bodyFont: "'Outfit', sans-serif", title: 'Cocktails',
+    d1: 'left:-30px; top:78px; width:170px; height:170px; border-radius:50%; background:#fff1c7;',
+    d2: 'left:100px; top:168px; width:140px; height:140px; border-radius:40px; background:#d9f5f2; transform:rotate(18deg);',
+    d3: 'left:150px; top:280px; width:56px; height:56px; border-radius:50%; background:#e6e0ff;',
+    ph: 'left:36px; top:108px; width:138px; height:180px; border-radius:30px; transform:rotate(-5deg); border:5px solid #fff1c7; box-sizing:border-box;',
+    swatches: ['#ff5c8a', '#fff1c7', '#d9f5f2'] },
+  neon: { bg: '#140f2e', ink: '#f0eefe', tColor: '#c6ff3d', sub: '#9ff6ff', pad: '32px 20px 40px', align: 'center',
+    titleFont: "'Righteous', sans-serif", tSize: 31, tWeight: 400, tStyle: 'normal', tCase: 'none', tTrack: '0.01em', bodyFont: "'Space Grotesk', sans-serif", title: 'Cocktails',
+    d1: 'left:35px; top:90px; width:140px; height:140px; box-sizing:border-box; border-radius:50%; border:4px solid #ff4fd8;',
+    d2: 'left:25px; top:80px; width:160px; height:160px; box-sizing:border-box; border-radius:50%; border:3px solid #3ef0ff;',
+    d3: 'left:166px; top:226px; width:18px; height:18px; border-radius:50%; background:#c6ff3d;',
+    ph: 'left:43px; top:98px; width:124px; height:124px; border-radius:50%;',
+    swatches: ['#140f2e', '#ff4fd8', '#c6ff3d'] },
+  spritz: { bg: '#ff6a13', ink: '#2b0f00', tColor: '#fff7ee', sub: '#2b0f00', pad: '32px 20px 40px', align: 'left',
+    titleFont: "'Abril Fatface', serif", tSize: 32, tWeight: 400, tStyle: 'normal', tCase: 'none', tTrack: '0', bodyFont: "'Work Sans', sans-serif", title: 'Cocktails',
+    d1: 'left:-60px; top:110px; width:340px; height:44px; background:#ffb38a; transform:rotate(-24deg);',
+    d2: 'left:-60px; top:180px; width:340px; height:44px; background:#fff1e4; transform:rotate(-24deg);',
+    d3: 'left:-60px; top:250px; width:340px; height:44px; background:#c9410a; transform:rotate(-24deg);',
+    ph: 'left:40px; top:110px; width:130px; height:180px; border-radius:65px 65px 8px 8px; border:5px solid #fff7ee; box-sizing:border-box;',
+    swatches: ['#ff6a13', '#fff1e4', '#c9410a'] },
+  basic: { bg: '#ffffff', ink: '#111111', tColor: '#111111', sub: '#444444', pad: '30px 20px 40px', align: 'left',
+    titleFont: "'Archivo', sans-serif", tSize: 23, tWeight: 800, tStyle: 'normal', tCase: 'uppercase', tTrack: '-0.01em', bodyFont: "'Archivo', sans-serif", title: 'Cocktails',
+    d1: 'left:20px; right:20px; top:60px; height:3px; background:#111111;',
+    d2: '',
+    d3: 'left:20px; right:20px; bottom:132px; height:1px; background:#111111;',
+    ph: 'left:20px; top:88px; width:170px; height:170px;',
+    swatches: ['#ffffff', '#111111', '#e6e6e6'] },
+};
+
+export const FONTS_URL =
+  'https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Bodoni+Moda:ital,wght@1,500&family=Jost:wght@400;500&family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@600&family=Bricolage+Grotesque:wght@800&family=DM+Sans:wght@500&family=DM+Serif+Display&family=Karla:wght@500&family=Young+Serif&family=Manrope:wght@600&family=Shrikhand&family=Outfit:wght@500&family=Righteous&family=Space+Grotesk:wght@500&family=Abril+Fatface&family=Work+Sans:wght@500&family=Archivo:wght@500;800&display=swap';

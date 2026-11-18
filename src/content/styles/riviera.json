@@ -1,0 +1,10 @@
+{
+  "name": "Riviera",
+  "nameEn": "Riviera",
+  "order": 5,
+  "look": "riviera",
+  "group": "summer",
+  "descNl": "Blauwe luifelstrepen en een boogfoto. Een vleugje Middellandse Zee.",
+  "descEn": "Blue awning stripes and an arched photo. A touch of the Mediterranean.",
+  "photo": "/images/styles/riviera.jpg"
+}

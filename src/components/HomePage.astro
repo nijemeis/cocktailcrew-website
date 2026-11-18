@@ -1,0 +1,290 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Cover from './Cover.astro';
+import { LOOKS } from '../lib/looks';
+import { loadPage, paths, type Lang } from '../lib/content';
+import { arrow, cherry, cherryBadge, glassFull, glassMini, glassOutline, plus } from './Icons';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const { home: h, settings, styles } = await loadPage(lang);
+const p = paths[lang];
+
+const groupLabel: Record<string, string> = {
+  lux: h.styles.groupLux,
+  summer: h.styles.groupSummer,
+  playful: h.styles.groupPlayful,
+  basic: h.styles.groupBasic,
+};
+const groups = ['all', 'lux', 'summer', 'playful', 'basic'].map((g) => ({
+  id: g,
+  label: g === 'all' ? h.styles.groupAll : groupLabel[g],
+  count: g === 'all' ? styles.length : styles.filter((s) => s.group === g).length,
+}));
+
+const styleName = (s: (typeof styles)[number]) => (lang === 'en' && s.nameEn ? s.nameEn : s.name);
+const heroCovers = (settings.heroStyles ?? [])
+  .map((slug, i) => ({ s: styles.find((x) => x.slug === slug), bar: settings.heroBars?.[i] ?? settings.sampleBar }))
+  .filter((x) => x.s);
+
+const diagrams: Record<string, { w: number; bg: string }[]> = {
+  a4: [{ w: 82, bg: '#f5ead8' }],
+  bifold: [{ w: 56, bg: '#dcd3c4' }, { w: 56, bg: '#f6a06b' }],
+  trifold: [{ w: 42, bg: '#dcd3c4' }, { w: 44, bg: '#c0b6a5' }, { w: 44, bg: '#f6a06b' }],
+};
+const band = Array.from({ length: 22 }, (_, i) => ({
+  glass: i % 2 === 0,
+  rot: i % 4 === 0 ? -10 : i % 4 === 2 ? 8 : 0,
+  fill: ['#d67f48', '#f6a06b', '#aebf92', '#ffc6a5'][Math.floor(i / 2) % 4],
+}));
+const legendCodes = [...new Set(h.panel.drinks.map((d) => d.allergen).filter(Boolean))];
+---
+<Base lang={lang} title={h.seo.title} description={h.seo.description} alternate={{ nl: paths.nl.home, en: paths.en.home }}>
+  <Header lang={lang} nav={h.nav} home={p.home} />
+
+  <main>
+    <section id="top" class="wrap hero">
+      <div class="hero-copy">
+        <span class="pill-sage">{h.hero.eyebrow}</span>
+        <h1>{h.hero.title}</h1>
+        <p class="hero-sub">{h.hero.sub}</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#aanvragen">{h.hero.cta1}<Fragment set:html={arrow} /></a>
+          <a class="btn btn-outline" href="#stijlen">{h.hero.cta2}</a>
+        </div>
+        <ul class="checks">
+          {h.hero.checks.map((c) => <li><Fragment set:html={cherry()} />{c}</li>)}
+        </ul>
+      </div>
+      <div class="hero-visual">
+        {settings.heroPhoto && <img src={settings.heroPhoto} alt="" fetchpriority="high" />}
+        <div class="hero-fan" role="img" aria-label={heroCovers.map((c) => styleName(c.s!)).join(', ')}>
+          {heroCovers.map(({ s, bar }) => (
+            <div class="fan-item"><div class="cover-scale"><Cover look={s!.look} bar={bar} tag={h.styles.coverTag} photo={s!.photo} /></div></div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap strip-section" aria-label={lang === 'nl' ? 'Drukkwaliteit' : 'Print quality'}>
+      <ul class="strip">
+        {h.strip.map((s) => <li><strong>{s.k}</strong><span>{s.v}</span></li>)}
+      </ul>
+    </section>
+
+    <section id="hoe" class="wrap how">
+      <div class="section-head">
+        <span class="eyebrow"><Fragment set:html={cherry()} />{h.how.eyebrow}</span>
+        <h2 class="h2">{h.how.title}</h2>
+      </div>
+      <ol class="steps">
+        {h.how.steps.map((s, i) => (
+          <li class="step">
+            <div class="step-top">
+              <span class="badge badge-lg"><Fragment set:html={cherryBadge(52, 54)} /><span>{i + 1}</span></span>
+              <span class="tag">{s.tag}</span>
+            </div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section id="stijlen" class="styles-section">
+      <div class="wrap styles-inner">
+        <div class="styles-head">
+          <div class="section-head">
+            <span class="eyebrow"><Fragment set:html={cherry()} />{h.styles.eyebrow}</span>
+            <h2 class="h2">{h.styles.title}</h2>
+            <p class="lead">{h.styles.sub}</p>
+          </div>
+          <div class="filters" role="group" aria-label={lang === 'nl' ? 'Filter op stijlgroep' : 'Filter by style group'}>
+            {groups.map((g) => (
+              <button type="button" data-filter={g.id} aria-pressed={g.id === 'all' ? 'true' : 'false'}>{g.label}<small>{g.count}</small></button>
+            ))}
+          </div>
+        </div>
+        <ul class="style-grid">
+          {styles.map((s) => {
+            const look = LOOKS[s.look] ?? LOOKS.basic;
+            return (
+              <li class="style-card" data-group={s.group}>
+                <div class="style-well" role="img" aria-label={`${lang === 'nl' ? 'Voorbeeldcover in stijl' : 'Sample cover in style'} ${styleName(s)}`}>
+                  <div class="cover-scale"><Cover look={s.look} bar={settings.sampleBar} tag={h.styles.coverTag} photo={s.photo} /></div>
+                </div>
+                <div class="style-meta">
+                  <div class="style-name">
+                    <h3>{styleName(s)}</h3>
+                    <span class="swatches" aria-hidden="true">{look.swatches.map((c) => <span style={`background:${c}`}></span>)}</span>
+                  </div>
+                  <span class="style-group">{groupLabel[s.group]}</span>
+                  <p class="style-desc">{lang === 'nl' ? s.descNl : s.descEn}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+
+    <div class="icon-band" aria-hidden="true">
+      <div class="icon-band-row">
+        {band.map((b) => (
+          <span style={`transform:rotate(${b.rot}deg)`}><Fragment set:html={b.glass ? glassMini(b.fill) : cherry(22, 26)} /></span>
+        ))}
+      </div>
+    </div>
+
+    <section class="wrap features">
+      <div class="panel-col">
+        <div class="panel" role="img" aria-label={lang === 'nl' ? 'Binnenzijde van een voorbeeldkaart in stijl Ivoor' : 'Inside of a sample menu in the Ivory style'}>
+          <div class="panel-head"><i></i><span>{h.panel.section}</span><i></i></div>
+          {h.panel.drinks.map((d, i) => (
+            <div class="drink">
+              <span class="drink-side">
+                {d.photo && <img src={d.photo} alt="" loading="lazy" />}
+                <span class="drink-no">{String(i + 1).padStart(2, '0')}</span>
+              </span>
+              <div class="drink-body">
+                <div class="drink-line">
+                  <span class="drink-name">{d.name}</span>
+                  {d.zero && <span class="zero">0.0</span>}
+                  <span class="dots"></span>
+                  <span class="price">{d.price}</span>
+                </div>
+                <span class="drink-desc">{d.desc}</span>
+                <span class="drink-ingr">{d.ingr}{d.allergen && <em>{d.allergen}</em>}</span>
+              </div>
+            </div>
+          ))}
+          <div class="panel-legend">
+            <span>{legendCodes.map((c) => <b>{c} </b>)}{h.panel.legend}</span>
+            <span>{h.panel.nix}</span>
+          </div>
+          {[1, 2, 3, 4].slice(0, h.features.items.length).map((n) => <span class={`callout callout-${n}`} aria-hidden="true">{n}</span>)}
+        </div>
+      </div>
+      <div class="features-copy">
+        <span class="eyebrow"><Fragment set:html={cherry()} />{h.features.eyebrow}</span>
+        <h2 class="h2">{h.features.title}</h2>
+        <ol class="feature-list">
+          {h.features.items.map((f, i) => (
+            <li>
+              <span class="badge badge-sm"><Fragment set:html={cherryBadge(38, 40, false)} /><span>{i + 1}</span></span>
+              <div><h3>{f.title}</h3><p>{f.body}</p></div>
+            </li>
+          ))}
+        </ol>
+        <ul class="extras">
+          {h.features.extras.map((x) => <li><Fragment set:html={cherry()} />{x}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section id="formaten" class="formats-section">
+      <Fragment set:html={glassOutline(200, '#474238', 0.6, 'class="formats-mark"')} />
+      <div class="wrap formats-inner">
+        <div class="section-head">
+          <span class="eyebrow on-dark"><Fragment set:html={cherry()} />{h.formats.eyebrow}</span>
+          <h2 class="h2">{h.formats.title}</h2>
+          <p class="lead">{h.formats.sub}</p>
+        </div>
+        <ul class="format-grid">
+          {h.formats.items.map((f) => (
+            <li class="format-card">
+              <div class="format-diagram" aria-hidden="true">
+                {(diagrams[f.kind] ?? diagrams.a4).map((d) => <i style={`width:${d.w}px; background:${d.bg}`}></i>)}
+              </div>
+              <div class="format-title"><h3>{f.name}</h3><span>{f.panels}</span></div>
+              <p>{f.body}</p>
+              <dl>
+                <dt>{h.formats.folded}</dt><dd>{f.trim}</dd>
+                <dt>{h.formats.flat}</dt><dd>{f.flatSize}</dd>
+                <dt>{h.formats.good}</dt><dd>{f.good}</dd>
+              </dl>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section id="papier" class="wrap paper">
+      <div class="section-head">
+        <span class="eyebrow"><Fragment set:html={cherry()} />{h.paper.eyebrow}</span>
+        <h2 class="h2">{h.paper.title}</h2>
+      </div>
+      <ul class="paper-grid">
+        {h.paper.papers.map((pp) => (
+          <li class:list={['paper-card', { rec: pp.rec }]}>
+            {pp.rec && <span class="rec-label">{h.paper.recommended}</span>}
+            <h3>{pp.name}</h3>
+            <p>{pp.body}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="paper-specs">
+        <div><span class="label">{h.paper.finishLabel}</span><div class="chips">{h.paper.finishes.map((f) => <span>{f}</span>)}</div></div>
+        <div><span class="label">{h.paper.qtyLabel}</span><div class="chips">{h.paper.qtys.map((q) => <span>{q}</span>)}</div></div>
+        <div class="grow"><span class="label">{h.paper.specLabel}</span><span class="spec">{h.paper.spec}</span></div>
+      </div>
+    </section>
+
+    <section id="vragen" class="wrap faq">
+      <div class="faq-head">
+        <span class="eyebrow"><Fragment set:html={cherry()} />{h.faq.eyebrow}</span>
+        <h2 class="h2">{h.faq.title}</h2>
+      </div>
+      <div class="faq-list">
+        {h.faq.items.map((q) => (
+          <details>
+            <summary>{q.q}<Fragment set:html={plus} /></summary>
+            <p>{q.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section id="aanvragen" class="wrap cta-section">
+      <div class="cta">
+        <div class="cta-copy">
+          <span class="cta-logo" aria-hidden="true" set:html={glassFull(68)} />
+          <h2>{h.cta.title}</h2>
+          <p>{h.cta.sub}</p>
+        </div>
+        <form class="form" name="menu-aanvraag" method="POST" action={p.thanks} data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="menu-aanvraag" />
+          <input type="hidden" name="taal" value={lang} />
+          <p class="sr-only"><label>Laat dit veld leeg <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="form-row">
+            <label>{h.cta.bar}<input type="text" name="zaak" autocomplete="organization" required /></label>
+            <label>{h.cta.city}<input type="text" name="plaats" autocomplete="address-level2" /></label>
+          </div>
+          <label>{h.cta.email}<input type="email" name="email" autocomplete="email" required /></label>
+          <label>{h.cta.format}<select name="formaat">{h.cta.formatOptions.map((o) => <option>{o}</option>)}</select></label>
+          <label>{h.cta.message}<textarea name="opmerking" rows="3"></textarea></label>
+          <button type="submit" class="btn btn-dark">{h.cta.submit}</button>
+          <span class="form-note">{h.cta.note}</span>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <Footer nix={h.footer.nix} creditsLabel={h.footer.credits} credits={settings.photoCredits} email={settings.email} phone={settings.phone} />
+
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.filters button');
+    const cards = document.querySelectorAll<HTMLElement>('.style-card');
+    buttons.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const g = btn.dataset.filter;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        cards.forEach((c) => (c.hidden = g !== 'all' && c.dataset.group !== g));
+      })
+    );
+  </script>
+</Base>
